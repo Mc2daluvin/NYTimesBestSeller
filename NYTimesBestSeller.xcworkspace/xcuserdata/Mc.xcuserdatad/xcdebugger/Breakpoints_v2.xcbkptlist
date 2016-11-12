@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NYTimesBestSeller/BookClass.swift"
+            timestampString = "500585511.078882"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "init(bookDictionary:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NYTimesBestSeller.BookClass.init (bookDictionary : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; NYTimesBestSeller.BookClass"
+                  moduleName = "NYTimesBestSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mc/Desktop/NYTimesBestSeller/NYTimesBestSeller/BookClass.swift"
+                  timestampString = "500497530.452908"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NYTimesBestSeller.BookClass.init (bookDictionary : Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; NYTimesBestSeller.BookClass"
+                  moduleName = "NYTimesBestSeller"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mc/Desktop/NYTimesBestSeller/NYTimesBestSeller/BookClass.swift"
+                  timestampString = "500497530.455741"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "688">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NYTimesBestSeller/ListTypeNY+CoreDataClass.swift"
+            timestampString = "500559314.85504"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "ListTypeNY"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

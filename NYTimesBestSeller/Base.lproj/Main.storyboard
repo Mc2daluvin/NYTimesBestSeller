@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="U8x-o3-Pwe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ZLO-mQ-a2o">
+            <objects>
+                <navigationController id="U8x-o3-Pwe" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aMd-gy-FB0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.3015807569026947" green="0.73009878396987915" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JB9-Mx-qv5" kind="relationship" relationship="rootViewController" id="TNg-Df-2P7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ifh-9h-8G0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-161" y="139"/>
+        </scene>
+        <!--NYTimes Best Sellers-->
+        <scene sceneID="U5p-d8-x1u">
+            <objects>
+                <viewController id="JB9-Mx-qv5" customClass="MainScreenVC" customModule="NYTimesBestSeller" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ukj-rh-Gsf"/>
+                        <viewControllerLayoutGuide type="bottom" id="u8z-LU-gnQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7m4-um-1e9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Types" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUW-wO-Nee">
+                                <rect key="frame" x="16" y="72" width="343" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="A6i-qz-nmN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="connection_error" translatesAutoresizingMaskIntoConstraints="NO" id="Ez0-mq-N3H">
+                                <rect key="frame" x="16" y="249" width="343" height="275"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="275" id="oHT-bP-2e8"/>
+                                </constraints>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6D-el-CpZ" customClass="customAboutButton" customModule="NYTimesBestSeller" customModuleProvider="target">
+                                <rect key="frame" x="16" y="532" width="343" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.39514142274856567" blue="0.39972752332687378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rDX-wj-SvV"/>
+                                </constraints>
+                                <state key="normal" title="Try Again">
+                                    <color key="titleColor" red="0.97972029447555542" green="1" blue="0.90242737531661987" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tryAgainAction:" destination="JB9-Mx-qv5" eventType="touchUpInside" id="btL-Dy-N2t"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NY-Times-best-seller" translatesAutoresizingMaskIntoConstraints="NO" id="5jE-lG-GM4">
+                                <rect key="frame" x="16" y="108" width="343" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="133" id="HQw-eB-xx0"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CNy-ag-vBe">
+                                <rect key="frame" x="16" y="108" width="343" height="539"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookTypeCell" rowHeight="65" id="z0A-jU-m08" customClass="BookTypeTableViewCell" customModule="NYTimesBestSeller" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z0A-jU-m08" id="cEG-YO-15n">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K82-4O-FUQ">
+                                                    <rect key="frame" x="8" y="8" width="327" height="48"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.97972029447555542" green="1" blue="0.90242737531661987" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="K82-4O-FUQ" firstAttribute="leading" secondItem="cEG-YO-15n" secondAttribute="leadingMargin" id="JKw-9s-7Qm"/>
+                                                <constraint firstItem="K82-4O-FUQ" firstAttribute="trailing" secondItem="cEG-YO-15n" secondAttribute="trailingMargin" id="L6F-oU-FOX"/>
+                                                <constraint firstItem="K82-4O-FUQ" firstAttribute="top" secondItem="cEG-YO-15n" secondAttribute="topMargin" id="Qnl-sb-Wpz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="K82-4O-FUQ" secondAttribute="bottom" id="ana-dI-ptg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bookTypeLabel" destination="K82-4O-FUQ" id="IB0-jg-RK4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PUW-wO-Nee" firstAttribute="top" secondItem="Ukj-rh-Gsf" secondAttribute="bottom" constant="8" id="0cS-YT-WCZ"/>
+                            <constraint firstItem="CNy-ag-vBe" firstAttribute="trailing" secondItem="7m4-um-1e9" secondAttribute="trailingMargin" id="9Dj-pY-EIw"/>
+                            <constraint firstItem="5jE-lG-GM4" firstAttribute="top" secondItem="PUW-wO-Nee" secondAttribute="bottom" constant="8" id="GlU-vc-zlC"/>
+                            <constraint firstItem="5jE-lG-GM4" firstAttribute="leading" secondItem="7m4-um-1e9" secondAttribute="leadingMargin" id="K2U-FL-nCq"/>
+                            <constraint firstItem="Ez0-mq-N3H" firstAttribute="trailing" secondItem="7m4-um-1e9" secondAttribute="trailingMargin" id="Kje-dq-kBu"/>
+                            <constraint firstItem="Ez0-mq-N3H" firstAttribute="leading" secondItem="7m4-um-1e9" secondAttribute="leadingMargin" id="NpC-jC-4Dd"/>
+                            <constraint firstItem="P6D-el-CpZ" firstAttribute="trailing" secondItem="7m4-um-1e9" secondAttribute="trailingMargin" id="Nwc-FM-hxL"/>
+                            <constraint firstItem="Ez0-mq-N3H" firstAttribute="top" secondItem="5jE-lG-GM4" secondAttribute="bottom" constant="8" id="QQH-7I-BFn"/>
+                            <constraint firstItem="5jE-lG-GM4" firstAttribute="trailing" secondItem="7m4-um-1e9" secondAttribute="trailingMargin" id="W7D-gK-RCc"/>
+                            <constraint firstItem="P6D-el-CpZ" firstAttribute="leading" secondItem="7m4-um-1e9" secondAttribute="leadingMargin" id="bhs-hk-j1H"/>
+                            <constraint firstItem="u8z-LU-gnQ" firstAttribute="top" secondItem="CNy-ag-vBe" secondAttribute="bottom" constant="20" id="blH-B5-S2l"/>
+                            <constraint firstItem="P6D-el-CpZ" firstAttribute="top" secondItem="Ez0-mq-N3H" secondAttribute="bottom" constant="8" id="ciF-eg-LqS"/>
+                            <constraint firstItem="CNy-ag-vBe" firstAttribute="top" secondItem="PUW-wO-Nee" secondAttribute="bottom" constant="8" id="d30-yy-JOh"/>
+                            <constraint firstItem="PUW-wO-Nee" firstAttribute="leading" secondItem="7m4-um-1e9" secondAttribute="leadingMargin" id="dby-Mx-aKv"/>
+                            <constraint firstItem="Ez0-mq-N3H" firstAttribute="top" secondItem="5jE-lG-GM4" secondAttribute="bottom" constant="8" id="wSC-Z4-3ak"/>
+                            <constraint firstItem="PUW-wO-Nee" firstAttribute="trailing" secondItem="7m4-um-1e9" secondAttribute="trailingMargin" id="wgv-ye-6ep"/>
+                            <constraint firstItem="CNy-ag-vBe" firstAttribute="leading" secondItem="7m4-um-1e9" secondAttribute="leadingMargin" id="xCG-IE-nYv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="NYTimes Best Sellers" id="8wP-bd-ARx"/>
+                    <connections>
+                        <outlet property="bookTypeTableView" destination="CNy-ag-vBe" id="fEK-Pu-J9C"/>
+                        <outlet property="connectToInternetButton" destination="P6D-el-CpZ" id="DrA-Nx-D2v"/>
+                        <outlet property="noConnectionImageView" destination="Ez0-mq-N3H" id="rbI-fs-fCO"/>
+                        <outlet property="nyTimesLogoImageView" destination="5jE-lG-GM4" id="BbH-oI-hCL"/>
+                        <outlet property="topLabel" destination="PUW-wO-Nee" id="jnc-fB-hvn"/>
+                        <segue destination="gMq-gN-Yk4" kind="show" identifier="booksForCatagorieSegue" id="JnR-uh-pVd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cix-7I-S6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740" y="138.98050974512745"/>
+        </scene>
+        <!--BooksVC-->
+        <scene sceneID="RDj-s1-w0E">
+            <objects>
+                <viewController id="gMq-gN-Yk4" customClass="BooksVC" customModule="NYTimesBestSeller" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8bH-B9-gb7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q5I-nO-ZFh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u95-pc-sC8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catagorie Best Sellers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gg-6b-LkR">
+                                <rect key="frame" x="16" y="72" width="343" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="6Bq-ls-x7T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5ec-2V-bBA">
+                                <rect key="frame" x="16" y="108" width="343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YLa-Pu-3Cx"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Rank"/>
+                                    <segment title="Weeks on List"/>
+                                </segments>
+                                <color key="tintColor" red="0.63396704196929932" green="0.28438425064086914" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentChange:" destination="gMq-gN-Yk4" eventType="valueChanged" id="4fb-Ou-RYL"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yikes 😰 we got an error looking for books." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgy-mU-MaO">
+                                <rect key="frame" x="39.5" y="322" width="296.5" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="Eia-AD-obR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f0Y-st-xKP">
+                                <rect key="frame" x="16" y="154" width="343" height="493"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookTableViewCell" rowHeight="65" id="dhw-NS-PTV" customClass="BookTableViewCell" customModule="NYTimesBestSeller" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dhw-NS-PTV" id="5iG-He-RSb">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSW-4X-eL8">
+                                                    <rect key="frame" x="8" y="8" width="327" height="48"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gSW-4X-eL8" firstAttribute="top" secondItem="5iG-He-RSb" secondAttribute="topMargin" id="7yp-d4-BCQ"/>
+                                                <constraint firstItem="gSW-4X-eL8" firstAttribute="leading" secondItem="5iG-He-RSb" secondAttribute="leadingMargin" id="BSr-9M-f1L"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gSW-4X-eL8" secondAttribute="bottom" id="Vf5-uJ-8g8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gSW-4X-eL8" secondAttribute="trailing" id="XD6-HB-qLK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.97972029447555542" green="1" blue="0.90242737531661987" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="bookTitleLabel" destination="gSW-4X-eL8" id="jsn-SF-mGl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.3015807569026947" green="0.73009878396987915" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q5I-nO-ZFh" firstAttribute="top" secondItem="f0Y-st-xKP" secondAttribute="bottom" constant="20" id="0QW-nw-Kzw"/>
+                            <constraint firstItem="f0Y-st-xKP" firstAttribute="leading" secondItem="u95-pc-sC8" secondAttribute="leadingMargin" id="BxM-zu-dZK"/>
+                            <constraint firstItem="5ec-2V-bBA" firstAttribute="trailing" secondItem="u95-pc-sC8" secondAttribute="trailingMargin" id="DBr-7r-3bF"/>
+                            <constraint firstItem="f0Y-st-xKP" firstAttribute="trailing" secondItem="u95-pc-sC8" secondAttribute="trailingMargin" id="Gok-Hn-juR"/>
+                            <constraint firstItem="f0Y-st-xKP" firstAttribute="top" secondItem="5ec-2V-bBA" secondAttribute="bottom" constant="16" id="Kar-Mc-oXG"/>
+                            <constraint firstItem="Jgy-mU-MaO" firstAttribute="centerY" secondItem="u95-pc-sC8" secondAttribute="centerY" id="OkP-y7-Imx"/>
+                            <constraint firstItem="5ec-2V-bBA" firstAttribute="top" secondItem="9Gg-6b-LkR" secondAttribute="bottom" constant="8" id="Q8z-GF-UhR"/>
+                            <constraint firstItem="9Gg-6b-LkR" firstAttribute="trailing" secondItem="u95-pc-sC8" secondAttribute="trailingMargin" id="Uha-TN-TQ2"/>
+                            <constraint firstItem="9Gg-6b-LkR" firstAttribute="leading" secondItem="u95-pc-sC8" secondAttribute="leadingMargin" id="Zg5-4i-RWq"/>
+                            <constraint firstItem="5ec-2V-bBA" firstAttribute="leading" secondItem="u95-pc-sC8" secondAttribute="leadingMargin" id="cxU-qc-Yk7"/>
+                            <constraint firstItem="9Gg-6b-LkR" firstAttribute="top" secondItem="8bH-B9-gb7" secondAttribute="bottom" constant="8" id="gZd-up-xVy"/>
+                            <constraint firstItem="Jgy-mU-MaO" firstAttribute="centerX" secondItem="u95-pc-sC8" secondAttribute="centerX" id="vVM-wl-l1F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qzf-B8-tT5"/>
+                    <connections>
+                        <outlet property="bookTableView" destination="f0Y-st-xKP" id="tJa-H6-1CX"/>
+                        <outlet property="bookTypeLabel" destination="9Gg-6b-LkR" id="gfC-Ts-kJr"/>
+                        <outlet property="segmentForSorting" destination="5ec-2V-bBA" id="dwX-O0-p6F"/>
+                        <segue destination="MHl-0T-J0O" kind="show" identifier="bookDetailsSegue" id="oYh-bV-SeX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bmQ-jF-eFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1556" y="138.98050974512745"/>
+        </scene>
+        <!--Book DetailsVC-->
+        <scene sceneID="khd-vN-5yy">
+            <objects>
+                <viewController id="MHl-0T-J0O" customClass="BookDetailsVC" customModule="NYTimesBestSeller" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YHY-dz-S5o"/>
+                        <viewControllerLayoutGuide type="bottom" id="VID-iK-CXe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LY5-az-Spn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NY-Times-best-seller" translatesAutoresizingMaskIntoConstraints="NO" id="khO-PH-Ydx">
+                                <rect key="frame" x="16" y="72" width="343" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="8cP-RE-Mp5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdR-FY-mRE">
+                                <rect key="frame" x="16" y="358" width="343" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20X-sq-lCL">
+                                <rect key="frame" x="16" y="329" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hVR-c9-4Yd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gix-O9-3NA">
+                                <rect key="frame" x="16" y="418" width="343" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg1-3T-dbC">
+                                <rect key="frame" x="16" y="389" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3ri-WX-Lw0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZH-Ya-Yha">
+                                <rect key="frame" x="16" y="478" width="343" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fx-eq-uJO">
+                                <rect key="frame" x="16" y="449" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="T3u-om-JtZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Oz-J9-wx8">
+                                <rect key="frame" x="24" y="511" width="327" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBc-64-Eoi" customClass="customAboutButton" customModule="NYTimesBestSeller" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="158.5" height="45"/>
+                                        <color key="backgroundColor" red="0.3015807569026947" green="0.73009878396987915" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Amazon Link Available">
+                                            <color key="titleColor" red="0.97972029447555542" green="1" blue="0.90242737531661987" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToAmazonLink:" destination="MHl-0T-J0O" eventType="touchUpInside" id="7y6-Ww-ESF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEr-zS-H97" customClass="customAboutButton" customModule="NYTimesBestSeller" customModuleProvider="target">
+                                        <rect key="frame" x="168.5" y="0.0" width="158.5" height="45"/>
+                                        <color key="backgroundColor" red="1" green="0.58446735143661499" blue="0.49747979640960693" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="NYTimes Review Link">
+                                            <color key="titleColor" red="0.97972029447555542" green="1" blue="0.90242737531661987" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToReviewLink:" destination="MHl-0T-J0O" eventType="touchUpInside" id="fnE-ov-A42"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="TyZ-KB-5IO"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="khO-PH-Ydx" firstAttribute="top" secondItem="YHY-dz-S5o" secondAttribute="bottom" constant="8" id="2Cr-k8-T47"/>
+                            <constraint firstItem="khO-PH-Ydx" firstAttribute="trailing" secondItem="LY5-az-Spn" secondAttribute="trailingMargin" id="3zh-QN-Syo"/>
+                            <constraint firstItem="Gix-O9-3NA" firstAttribute="top" secondItem="Bg1-3T-dbC" secondAttribute="bottom" constant="8" id="8Q6-D3-swf"/>
+                            <constraint firstItem="Gix-O9-3NA" firstAttribute="trailing" secondItem="LY5-az-Spn" secondAttribute="trailingMargin" id="DCg-EP-PC6"/>
+                            <constraint firstItem="20X-sq-lCL" firstAttribute="top" secondItem="khO-PH-Ydx" secondAttribute="bottom" constant="17" id="DK0-fi-WNr"/>
+                            <constraint firstItem="8Oz-J9-wx8" firstAttribute="leading" secondItem="LY5-az-Spn" secondAttribute="leadingMargin" constant="8" id="EC8-7m-phh"/>
+                            <constraint firstItem="20X-sq-lCL" firstAttribute="trailing" secondItem="LY5-az-Spn" secondAttribute="trailingMargin" id="FEo-AL-319"/>
+                            <constraint firstItem="Bg1-3T-dbC" firstAttribute="leading" secondItem="LY5-az-Spn" secondAttribute="leadingMargin" id="GL2-0D-oVi"/>
+                            <constraint firstItem="8Oz-J9-wx8" firstAttribute="top" secondItem="mZH-Ya-Yha" secondAttribute="bottom" constant="9.5" id="LDB-O9-lPe"/>
+                            <constraint firstItem="Gix-O9-3NA" firstAttribute="leading" secondItem="LY5-az-Spn" secondAttribute="leadingMargin" id="LR0-Md-wjN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Oz-J9-wx8" secondAttribute="trailing" constant="8" id="MqV-w9-lUq"/>
+                            <constraint firstItem="Bg1-3T-dbC" firstAttribute="trailing" secondItem="LY5-az-Spn" secondAttribute="trailingMargin" id="MtU-Wh-6gW"/>
+                            <constraint firstItem="20X-sq-lCL" firstAttribute="leading" secondItem="LY5-az-Spn" secondAttribute="leadingMargin" id="Nkf-ii-nP8"/>
+                            <constraint firstItem="sdR-FY-mRE" firstAttribute="leading" secondItem="LY5-az-Spn" secondAttribute="leadingMargin" id="PJs-kN-gU8"/>
+                            <constraint firstItem="Bg1-3T-dbC" firstAttribute="top" secondItem="sdR-FY-mRE" secondAttribute="bottom" constant="8" id="Q6x-ZS-9gu"/>
+                            <constraint firstItem="mZH-Ya-Yha" firstAttribute="leading" secondItem="LY5-az-Spn" secondAttribute="leadingMargin" id="UMr-pa-zR3"/>
+                            <constraint firstItem="mZH-Ya-Yha" firstAttribute="top" secondItem="7Fx-eq-uJO" secondAttribute="bottom" constant="8" id="Ubl-ai-3yI"/>
+                            <constraint firstItem="7Fx-eq-uJO" firstAttribute="leading" secondItem="LY5-az-Spn" secondAttribute="leadingMargin" id="XJG-kP-8eI"/>
+                            <constraint firstItem="khO-PH-Ydx" firstAttribute="leading" secondItem="LY5-az-Spn" secondAttribute="leadingMargin" id="Yfk-Or-FRR"/>
+                            <constraint firstItem="sdR-FY-mRE" firstAttribute="trailing" secondItem="LY5-az-Spn" secondAttribute="trailingMargin" id="ebH-nq-WPJ"/>
+                            <constraint firstItem="7Fx-eq-uJO" firstAttribute="top" secondItem="Gix-O9-3NA" secondAttribute="bottom" constant="8" id="hIx-cw-jnv"/>
+                            <constraint firstItem="7Fx-eq-uJO" firstAttribute="trailing" secondItem="LY5-az-Spn" secondAttribute="trailingMargin" id="hca-xK-Lc5"/>
+                            <constraint firstItem="20X-sq-lCL" firstAttribute="top" secondItem="khO-PH-Ydx" secondAttribute="bottom" constant="17" id="r8x-ou-iUO"/>
+                            <constraint firstItem="mZH-Ya-Yha" firstAttribute="trailing" secondItem="LY5-az-Spn" secondAttribute="trailingMargin" id="xYi-zJ-PFg"/>
+                            <constraint firstItem="sdR-FY-mRE" firstAttribute="top" secondItem="20X-sq-lCL" secondAttribute="bottom" constant="8" id="zTW-0g-UyU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amazonLinkButton" destination="pBc-64-Eoi" id="UN1-a8-TcZ"/>
+                        <outlet property="bookAuthorLabel" destination="Gix-O9-3NA" id="lXk-mK-3ID"/>
+                        <outlet property="bookDescriptionLabel" destination="mZH-Ya-Yha" id="xxB-ES-0Rh"/>
+                        <outlet property="bookImageView" destination="khO-PH-Ydx" id="wRJ-jr-z0T"/>
+                        <outlet property="bookTitleLabel" destination="sdR-FY-mRE" id="98d-ud-PGp"/>
+                        <outlet property="nytimesReviewLinkButton" destination="dEr-zS-H97" id="gDQ-qA-h34"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vdg-No-8yO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2301.5999999999999" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NY-Times-best-seller" width="1316" height="98"/>
+        <image name="connection_error" width="594" height="750"/>
+    </resources>
+</document>
